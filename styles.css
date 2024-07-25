@@ -1,0 +1,138 @@
+/* Default light mode styles */
+body {
+    background-color: #ffffff;
+    color: #000000;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+}
+
+.container #inputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container #inputs input{
+    margin-left: 10px;
+    margin-right: 25px;
+    padding: 9px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+#bars {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Align items to the bottom */
+    margin: 20px 0;
+    height: 300px; /* Ensure this height is sufficient */
+}
+
+.bar {
+    width: 20px;
+    margin: 0 2px;
+    background-color: steelblue;
+    transition: height 0.5s ease, background-color 0.5s ease;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#time-display {
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+.theme-toggle-container {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
+.theme-toggle-button {
+    width: 60px;
+    height: 34px;
+    position: relative;
+    display: inline-block;
+}
+
+.theme-toggle-button input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #4CAF50; /* Default color for light mode */
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3; /* Color for dark mode */
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.dark-mode {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.dark-mode .bar {
+    background-color: #444444;
+}
+
+.dark-mode button {
+    background-color: #007BFF;
+}
+
+.dark-mode button:hover {
+    background-color: #0056b3;
+}
+
+.dark-mode #time-display {
+    color: #ffffff;
+}
